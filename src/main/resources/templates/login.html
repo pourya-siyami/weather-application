@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <style>
+        div {
+            margin: 100px;
+            background-color: darkcyan;
+            color: aliceblue;
+            padding: 100px;
+            border-radius: 30px;
+        }
+
+        h1 {
+            margin-top: 50px
+        }
+    </style>
+</head>
+<body>
+<h1 align="center">Enter your username and password:</h1>
+<div align="center">
+    <form action="#" th:action="@{/login}" method="post" th:object="${user}" th:align="center">
+        <input placeholder="username" th:field="*{username}"/>
+        <input placeholder="password" th:field="*{password}"/>
+        <input type="submit">
+
+    </form>
+</div>
+</body>
+</html>

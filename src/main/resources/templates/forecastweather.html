@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Forecast Weather</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        div {
+            margin-top: 10px;
+            background-color: darkslategrey;
+            color: aqua;
+            padding: 20px;
+        }
+
+        li {
+            margin-top: 10px;
+            font-size: 20px;
+            color: darkblue;
+        }
+
+        p {
+            font-size: 20px;
+            color: #ffcd39;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <h1>Forecast Weather the next 2 days</h1>
+    <p th:text="City + ' = ' + ${forecastWeather.location.name}"></p>
+</div>
+
+
+<br>
+
+
+<ul th:align="center">
+
+    <h4>Today</h4>
+    <li th:text="MaxTemp + ' = ' + ${forecastWeather.forecast.forecastday.get(0).day.maxtemp_c}"></li>
+    <li th:text="MinTemp + ' = ' + ${forecastWeather.forecast.forecastday.get(0).day.mintemp_c}"></li>
+    <li th:text="Date + ' = ' + ${forecastWeather.forecast.forecastday.get(0).date}"></li>
+    <li th:text="Description + ' = ' + ${forecastWeather.forecast.forecastday.get(0).day.condition.text}"></li>
+    <br>
+    <h4>Tomorrow</h4>
+    <li th:text="MaxTemp + ' = ' + ${forecastWeather.forecast.forecastday.get(1).day.maxtemp_c}"></li>
+    <li th:text="MinTemp + ' = ' + ${forecastWeather.forecast.forecastday.get(1).day.mintemp_c}"></li>
+    <li th:text="Date + ' = ' + ${forecastWeather.forecast.forecastday.get(1).date}"></li>
+    <li th:text="Description + ' = ' + ${forecastWeather.forecast.forecastday.get(1).day.condition.text}"></li>
+    <br>
+    <h4>Next 2 days</h4>
+    <li th:text="MaxTemp + ' = ' + ${forecastWeather.forecast.forecastday.get(2).day.maxtemp_c}"></li>
+    <li th:text="MinTemp + ' = ' + ${forecastWeather.forecast.forecastday.get(2).day.mintemp_c}"></li>
+    <li th:text="Date + ' = ' + ${forecastWeather.forecast.forecastday.get(2).date}"></li>
+    <li th:text="Description + ' = ' + ${forecastWeather.forecast.forecastday.get(2).day.condition.text}"></li>
+</ul>
+
+
+</body>
+</html>

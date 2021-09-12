@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Forecast Weather</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <style>
+        div {
+            background-color: lightseagreen;
+            font-size: 30px;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 10px;
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+
+        div {
+            margin: 50px
+        }
+
+        h1 {
+            margin-top: 100px
+        }
+
+        h5 {
+            margin-bottom: 20px
+        }
+    </style>
+</head>
+<body>
+<h1 align="center">Forecast Weather</h1>
+<div align="center">
+    <h5>Enter your city:</h5>
+    <form action="#" th:action="@{/forecast-weather}" method="post" th:object="${callWeather}" th:align="center">
+        <input placeholder="city" th:field="*{city}"/>
+        <input type="submit">
+    </form>
+</div>
+</body>
+</html>
